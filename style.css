@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.slider-wrapper{
+    position: relative;
+}
+
+.slider{
+    display: grid;
+    grid-auto-flow: column;
+    scroll-snap-type: mandatory;
+    max-width: 70vw;
+    max-height: 95vh;
+    border-radius: 0.5rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    scroll-behavior: smooth;
+}
+
+.slider::-webkit-scrollbar{
+    display: none;
+}
+
+.slider img{
+    scroll-snap-align: start;
+    width: 70vw;
+    height: 70vh;
+    object-fit: cover;
+}
+
+.dots{
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 15px;
+    z-index: 1;
+}
+
+.dots a{
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.dots a:hover{
+    opacity: 1;
+}
